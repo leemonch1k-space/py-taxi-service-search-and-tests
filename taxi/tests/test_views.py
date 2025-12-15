@@ -376,7 +376,7 @@ class PrivateAllPagesTest(TestCase):
 
         self.assertEqual(Car.objects.count(), initial_count - 1)
 
-        with self.assertRaises(Car().DoesNotExist):
+        with self.assertRaises(Car.DoesNotExist):
             Car.objects.get(pk=car_to_delete.pk)
 
     def test_manufacturer_pagination_is_five(self):
